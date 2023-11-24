@@ -44,19 +44,21 @@ Inferring sentiments and topics from the product reviews and newa articles.
 
 ## Expanding
 Customer support respnse to review - 
-"You are a customer service AI assistant.
-Your task is to send an email reply to a valued customer.
-Given the customer email delimited by ```, \
-Generate a reply to thank the customer for their review.
-If the sentiment is positive or neutral, thank them for \
-their review.
-If the sentiment is negative, apologize and suggest that \
-they can reach out to customer service. 
-Make sure to use specific details from the review.
-Write in a concise and professional tone.
-Sign the email as `AI customer agent`.
-Customer review: ```{review}```
-Review sentiment"
+
+        "You are a customer service AI assistant.
+        Your task is to send an email reply to a valued customer.
+        Given the customer email delimited by ```, \
+        Generate a reply to thank the customer for their review.
+        If the sentiment is positive or neutral, thank them for \
+        their review.
+        If the sentiment is negative, apologize and suggest that \
+        they can reach out to customer service. 
+        Make sure to use specific details from the review.
+        Write in a concise and professional tone.
+        Sign the email as `AI customer agent`.
+        Customer review: ```{review}```
+        Review sentiment"
+
 
 Temperature in chatGPT - At lowest temperature = 0, the model always predicts highest likelihood word. At higher temperature, instead of the highest likelihood next word, also predict slightly lesser likelihood next words. At higher temperature the model is more random and creative.
 
