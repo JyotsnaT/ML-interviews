@@ -38,7 +38,41 @@ Inferring sentiments and topics from the product reviews and newa articles.
 
 ## Transforming
 1. Language translation
-2. Spell and grammer correction
+2. Spell and grammer correction (Reference - https://writingprompts.com/bad-grammar-examples/)
 3. Transform one format to another - Convert from HTML to json
 4. Tone transformation - convert informal or slang to formal tone
 
+## Expanding
+Customer support respnse to review - 
+"You are a customer service AI assistant.
+Your task is to send an email reply to a valued customer.
+Given the customer email delimited by ```, \
+Generate a reply to thank the customer for their review.
+If the sentiment is positive or neutral, thank them for \
+their review.
+If the sentiment is negative, apologize and suggest that \
+they can reach out to customer service. 
+Make sure to use specific details from the review.
+Write in a concise and professional tone.
+Sign the email as `AI customer agent`.
+Customer review: ```{review}```
+Review sentiment"
+
+Temperature in chatGPT - At lowest temperature = 0, the model always predicts highest likelihood word. At higher temperature, instead of the highest likelihood next word, also predict slightly lesser likelihood next words. At higher temperature the model is more random and creative.
+
+## chatbots
+
+    def get_completion(prompt, model="gpt-3.5-turbo"):
+        messages = [{"role": "user", "content": prompt}]
+        response = openai.ChatCompletion.create(
+            model=model,
+            messages=messages,
+            temperature=0, # this is the degree of randomness of the model's output
+        )
+        return response.choices[0].message["content"]
+
+LLM to be prompted using a json with keys - "role" and "content". 
+The role can be either "user", "system", "assistant". 
+"system" - Telling the LLM what role to take while replying like an assistant. For e.g. a custom chat assistant can be created by instructing the LLM as - "You are an assistant that speaks like Shakespeare."
+
+For the chatbot, the context needs to be provided to get more accurant and relevant information.
