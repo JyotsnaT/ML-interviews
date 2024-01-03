@@ -28,6 +28,7 @@ MACHINE LEARNING](https://mml-book.github.io/book/mml-book.pdf)
 3. [data-science-interviews](https://github.com/alexeygrigorev/data-science-interviews/blob/master/theory.md)
 4. [Wiki: ML Interviews Resources & Advice(s)](https://forums.fast.ai/t/wiki-ml-interviews-resources-advice-s/70528)
 5. - [ ] [A Recipe for Training Neural Networks](https://karpathy.github.io/2019/04/25/recipe/)
+6. [ml-road](https://github.com/yanshengjia/ml-road/tree/master/resources)
 
 # Resources
  - [Stanford EDU](https://online.stanford.edu/explore?type=course)
