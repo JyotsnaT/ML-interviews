@@ -23,10 +23,11 @@ MACHINE LEARNING](https://mml-book.github.io/book/mml-book.pdf)
 6. [Introduction To Probability](https://ocw.mit.edu/courses/res-6-012-introduction-to-probability-spring-2018/pages/part-i-the-fundamentals/)
 
 # Articles/github links
-1. [MLE flash cards](https://github.com/b7leung/MLE-Flashcards/tree/main)
+1. - [ ] [MLE flash cards](https://github.com/b7leung/MLE-Flashcards/tree/main)
 2. [Machine Learning tips and tricks cheatsheet](https://stanford.edu/~shervine/teaching/cs-229/cheatsheet-machine-learning-tips-and-tricks)
 3. [data-science-interviews](https://github.com/alexeygrigorev/data-science-interviews/blob/master/theory.md)
 4. [Wiki: ML Interviews Resources & Advice(s)](https://forums.fast.ai/t/wiki-ml-interviews-resources-advice-s/70528)
+5. - [ ] [A Recipe for Training Neural Networks](https://karpathy.github.io/2019/04/25/recipe/)
 
 # Resources
  - [Stanford EDU](https://online.stanford.edu/explore?type=course)
