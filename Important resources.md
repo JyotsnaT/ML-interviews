@@ -21,6 +21,10 @@ MACHINE LEARNING](https://mml-book.github.io/book/mml-book.pdf)
 4. [Introduction to applied linear algebra](https://www.youtube.com/playlist?list=PLoROMvodv4rMz-WbFQtNUsUElIh2cPmN9)
 5. [Gilbert strang linear algebra](https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/video_galleries/video-lectures/)
 6. [Introduction To Probability](https://ocw.mit.edu/courses/res-6-012-introduction-to-probability-spring-2018/pages/part-i-the-fundamentals/)
+7. [YT] James Briggs
+8. [YT] AI Anytime
+9. [YT] Mathew Berman
+10. [YT] Sam Witteveen (the best)
 
 # Articles/github links
 1. - [ ] [MLE flash cards](https://github.com/b7leung/MLE-Flashcards/tree/main)
