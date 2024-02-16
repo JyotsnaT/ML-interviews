@@ -28,11 +28,12 @@ MACHINE LEARNING](https://mml-book.github.io/book/mml-book.pdf)
 
 # Articles/github links
 1. - [ ] [MLE flash cards](https://github.com/b7leung/MLE-Flashcards/tree/main)
-2. [Machine Learning tips and tricks cheatsheet](https://stanford.edu/~shervine/teaching/cs-229/cheatsheet-machine-learning-tips-and-tricks)
-3. [data-science-interviews](https://github.com/alexeygrigorev/data-science-interviews/blob/master/theory.md)
-4. [Wiki: ML Interviews Resources & Advice(s)](https://forums.fast.ai/t/wiki-ml-interviews-resources-advice-s/70528)
+2. - [ ] [Machine Learning tips and tricks cheatsheet](https://stanford.edu/~shervine/teaching/cs-229/cheatsheet-machine-learning-tips-and-tricks)
+3. - [ ] [data-science-interviews](https://github.com/alexeygrigorev/data-science-interviews/blob/master/theory.md)
+4. - [Wiki: ML Interviews Resources & Advice(s)](https://forums.fast.ai/t/wiki-ml-interviews-resources-advice-s/70528)
 5. - [ ] [A Recipe for Training Neural Networks](https://karpathy.github.io/2019/04/25/recipe/)
-6. [ml-road](https://github.com/yanshengjia/ml-road/tree/master/resources)
+6. - [ ] [ml-road](https://github.com/yanshengjia/ml-road/tree/master/resources)
+7. - [ ] [ML interview](https://github.com/khangich/machine-learning-interview)
 
 # Resources
  - [Stanford EDU](https://online.stanford.edu/explore?type=course)
