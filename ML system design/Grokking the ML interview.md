@@ -4,7 +4,8 @@
 ML is used at several areas like speech understanding, visual understansing, search ranking, fraud detection
 
 ## ML interview expectation
-<img src="ML system design/MLsystemdesign.png" width=400/>
+
+  <img src="/ML system design/MLsystemdesign.png" width = 400>
 
 ## Setting up ML system
 - Setting up problem
@@ -34,7 +35,8 @@ Probe: How is the feed currently displayed and how can can it be improved?
     - End-to-end metrics
   
 - Architecture design
-<img src="ML system design/serach_architecture.png" width=500/>
+
+  <img src="/ML system design/serach_architecture.png" width=500/>
 
 - Scale consideration
   Funnel method can be used to reduce the number of items at every stage, and a complex model can be safely used in final stages.
@@ -61,4 +63,36 @@ Probe: How is the feed currently displayed and how can can it be improved?
 - Iterative model development
   - Debug the model when the online performance does not replicate the offline testing.
   - Monitor the performance of the first version of the model after it has been deployed.
-  - 
+
+ ## Performance and capacity considerations
+ - Capacity considerations to be made during
+     - Training : Training data, model capacity
+     - Evalaution : serving SLA, model capacity
+ - Types of complexities
+     - Training : Time taken to train the model
+     - Evaluation : Time taken to evaluate input at testing time
+     - Sample : Number of examples requried to succesfully learn target function
+  - Asymptotc analysis
+    - Linear/Logistic regression : Train - O(nfe), Eval - O(f), Best choise to save on train and  evaluation time
+    - Neural Networks : Train : NA, Eval - O(fnl1 + nl1nl2 + nl2nl3 .. ). Best choise to solve complex problems and if complexity is not an issue.
+    - Decision trees/forest : Train : O(nfn_td), Eval : O(fn_td). It is faster than Deep networks and generalizes well. Should be preferred when training data is scarce and capacity is crucial.
+  - Example
+    - No. of documents in the search engine to evaluate against a query : 100M = 100 X $10^6$
+    - SLA 
+      - Performance : Return the results back within given time frame
+      - Capacity : Queries per second the system can handle
+    - Tree based model :
+      - Inference time = $1\mu s$ = 1 X $10^{-6}s$
+      - Total for 100M images = 100s
+    - Load distribution :
+      - Distribute load of one query among 1000 shards
+      - Inference time for 100M images - 100 X $10^6$ X 1 X $10^{-6}$ X $10^{-3}$ s = 100ms
+    - Deep learning model :
+      - Inference time = 1ms = $10^{-3}s$
+        - Total time with 1000 shards = 100 X $10^6$ X $10^{-3}$ X $10^{-3}$ s = 100s
+        - For unlimited capacity, just add more shards till this numnber is down. But it is not practical
+  - Funnel based approach
+    In this method we begin with a simpler and fast model to first narrow down our search to small number of items. Then apply the more complex model on limited set of items which reduces the SLA time overall
+    - Example :
+      - Deep learning on 500 documents with 5 shards : 500 X $10^-3$ X $5^-1$ s = 100ms 
+        
