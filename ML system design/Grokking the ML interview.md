@@ -143,3 +143,22 @@ Probe: How is the feed currently displayed and how can can it be improved?
     - Boostrapping new items
         - In the system where new items are continuously added, boost the new items artifically.
         - For e.g. in the case of movie recommendations, for the cold start problem of items. Recommend new movies similar to the ones already liked by the user.
+
+# Online Experimentation
+ML model's success can be measured through different ways, depending on the underlying application.
+- Hypothesis and metrics intution : Hypothesis is a claim that a certain change in model's properties will lead to increase in performance of the model. Online testing will test this claim in a controlled environment.
+- A/B test : A different version of the existing system is created which deploys the hypothesis. The original version is called 'control' and the new variant is called as 'variation' or 'experiment'.
+    - Null hypothesis - The design change will have no change in the performance of the system.
+    - Alternate hypothesis - The design change will have positive effect in the performance of the system.
+    - Use stastical analysis to confidently say that the positive impact is stastically significant.
+- Measuring resutls : Results need to be statistically signigficant to back up claims of the either hypotheses.
+- Computing statistical significance :
+    - P-value to determine the statistical significance of tests.
+    - Significance level(alpha) - boundary to specify a stastically significant finding. Usually 0.05
+    - p values less than alpha : The result of test is significant. Reject null hypothesis.
+    - p value greater than alpha : The result of test is not significant. Fail to reject null hypothesis.
+- Measuring long term effects
+- Back testing : Conduct a B/A test and ensure that if there was a gain of x% in A/B test, there is x% loss in B/A test.
+- Long running A/B tests : In a short running experiment we might see gains but in long term that change might cause loss in some other areas. For e.g. if we show more ads to users in ad recommendation platform, in short term there might be increase in revenue. But in long term users might start leaving the platform since too many ads are being show. A long running A/B test can be performed. A long running backtest can be used as well.
+
+  <img src="online-test.png" width=500>
