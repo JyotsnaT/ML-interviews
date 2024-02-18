@@ -5,7 +5,7 @@ ML is used at several areas like speech understanding, visual understansing, sea
 
 ## ML interview expectation
 
-  <img src="/ML system design/MLsystemdesign.png" width = 400>
+  <img src="/ML system design/MLsystemdesign.png" width = 700>
 
 ## Setting up ML system
 - Setting up problem
@@ -95,4 +95,18 @@ Probe: How is the feed currently displayed and how can can it be improved?
     In this method we begin with a simpler and fast model to first narrow down our search to small number of items. Then apply the more complex model on limited set of items which reduces the SLA time overall
     - Example :
       - Deep learning on 500 documents with 5 shards : 500 X $10^-3$ X $5^-1$ s = 100ms 
-        
+
+## Training data collection strategies
+- Main components of ML system - ML algorithm, Training data, Features
+- Quality and quantity of trainig data impact the final performance greatly
+- Collection techniques
+    - Online data collection :
+        - If there is an existing system in place which gives model predictions, then user interaction with those can be treated as training data.          - This can be a rule based or a weak ML system.
+        - Ex. Recommendation system, an existing rule based recommender, popularity recommender, region based recommender would be existing. USer's interaction with those can be treated as training data.
+    - Offline data collection :
+        - Use labellers to generate high quality data
+        - Ex. Image segmentation : We need different components of the data to be labelled for this task.
+            - Crowdsourcing : Get labels by outsourcing tasks to group of people Works for simpler tasks. Does not work when there are privacy concerns, or there are complex tasks.
+            - Specialized labellers : Trained labellers for the speicialized task. Has a high training time for labellers. Might be expensive
+            - Open source datasets
+    - Additional creative collection strategies
