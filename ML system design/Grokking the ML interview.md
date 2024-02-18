@@ -110,3 +110,36 @@ Probe: How is the feed currently displayed and how can can it be improved?
             - Specialized labellers : Trained labellers for the speicialized task. Has a high training time for labellers. Might be expensive
             - Open source datasets
     - Additional creative collection strategies
+        - Product interation with user generates data automatically.
+          - Ex : Pinterest builds
+            - Item profile by asking users to save pins in a board labelled by the user
+            - User profile by suggesting boards based on existing users
+        - Manual expansion
+          - Data augmentation
+              - For logo detection place the logo on differnt images with varied orientations.
+        - GAN based expansion
+          - Use GAN models to create examples for subcategories where examples do not exist.
+- Train, test and validation splits
+    - Training data : Useful to learn the parameters of the model
+    - Validation data : Useful to tune the hyperparameters. And to know whether the model performs good because it overfits the training data or it can actually generalize very well. After a certain numnber of iterations when the validation error starts increasing is when the model starts overfitting the train data.
+
+      <img src="val-error.png" width=500>
+    - Test data : Hold out set that the model has not seen at all. It will test the true generalizing capabilities of the model. It is also used for model selection if multiple models have been trained. The outcome of this test will determine if the model will be sent for A/B testing.
+- Splits strategies
+    - Ratio : 60:20:20 or 70:15:15
+    - All splits have all patterns : User pattern throughout the week/year/month.
+    - Time based split : Train on historical data. Validate and test on more recent data.
+- No. of training examples
+    - Plot the performance of the model against the number of examples. After a certain number of examples the performance of the model would not change. That is the optimal number of training examples required to train the model.
+      
+<img src="train-examples.png" width=500>
+
+- Training data filtering
+    - Data cleaning : Handling missing data, duplicates, outliers, drop irrelevant features. Remove unuseful patterns identified in the training data.
+    - Bias removal :
+        - Based on how the dataset is created, there might be some bias introduced in the system.
+        - For e.g in online data generation for recommendation system, the movies recommender earlier will be recommeded again as they appeared on the top last time.
+        - Employ an explore strategy to remove the bias. In case of online data generation, show a randomized list instead of popular for a small set of users.
+    - Boostrapping new items
+        - In the system where new items are continuously added, boost the new items artifically.
+        - For e.g. in the case of movie recommendations, for the cold start problem of items. Recommend new movies similar to the ones already liked by the user.
