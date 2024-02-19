@@ -178,3 +178,15 @@ Using embeddings we can encode an entity into a N-dimensional vector, while capt
     - Supervised model embeddings : Since supervised CNNs are trained for specific tasks, their penultimate layer outputs can be used as embeddings.
 - Learning embeddings for a particular task during training time. For e.g train embeddings for movies and queries suring training time.
 - Network relationship based embeddings : Jointly train embeddings for user and items for example in the same space. For ranking and recommendation, the embeddings of user and item will be closed to each other when a user likes that item. The two tower model is used for this and the loss function is difference in cosine distance of similar pair vs un similar pairs.  
+
+# Transfer Learning
+Use the model trained for task1 by applying it to task2. Model can attain higher accuracy in less time.
+It is used because - 
+- Limited training resource
+- Less number of trianig examples
+- Common subproblems : In visual tasks detecting edges, boundaries, backgrounds. In textual tasks understading text semantics.
+- Knowledge sharing and Growth in ML community : Share SOTA results with the community.
+  
+Transfer learning techniques
+1. Extract feartures from pre trained models : Replace the final layers with a classification layer for current task.
+2. Fine tuning : Freeze the initial layers and retrain the remaining layers also known as fine tuning.
