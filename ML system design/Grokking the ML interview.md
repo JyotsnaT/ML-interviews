@@ -190,3 +190,51 @@ It is used because -
 Transfer learning techniques
 1. Extract feartures from pre trained models : Replace the final layers with a classification layer for current task.
 2. Fine tuning : Freeze the initial layers and retrain the remaining layers also known as fine tuning.
+
+Transfer learning techniques can be utilized depending on 
+1. Size of available training data : For less data, only the last layer can be finetuned. When there is a lot of data, one can experiment between training only last layer and retraining the entire network starting from pre trained weights.
+2. Similarity of tasks : If the task2 is more similar to task1, we can just use all the weights as is.
+
+Applications
+- Computer vision
+  Using a retrained imagenet classifier for medical images classifier. The conv fitlers in the initial layers detect low level features like edges followed by shapes. These are general features and can be very useful in any image detection task
+    - Fine tune a few layers : In case when the task is similar and there are less number of examples, we can freeze weights of most of starting layers and fine tune only end layers.
+    - Fine tune more layers : When there are significant number of samples and there is some difference in new task, we can freeze only few starting layers anf fine tune rest all the layers.
+    - Fine tuning entire model : When there is a lot of data, we can fine tune the entire network to better optimize for new task.
+- NLP
+    - For several NLP tasks like language understanding, speech recognition, NER, language generation, language translation, we need to represent the text such that the context is captured.
+    - We can use dense representation learnt through self supervised learning like word2vec, BERT and ELMO.
+ 
+# Model debugging and testing
+- Buiding first version of the model V1
+    - We need to launch the V1 system as quickly as possible without optimizing it too much, if it performs upto the benchmark.
+    - Complete one cycle and iterate later
+        - identify business problem and map to ML task
+        - Explore training data and ML techniques
+        - Train model on data, and tune hyperparameters
+        - Perform offline evaluation and figgle with data, features, model till the offline metrics look good
+        - Compare the offline performance with benchmark
+- Deploy and debug V1 model
+
+  After deploying V1, the online performance might not replicate the offline performance. We can debug and check for following failure points-
+    - Change in data/feature distribution
+        - Data is trained on TypeA dataset, but the actual traffic contains TypeB data. For e.g. model trained on movie screenshots and actual data is social media posts.
+        - Seasonality : Data was trained on holiday season and online data is of off season.
+    - Feature logging issues :  The logic to compute features in offline setting and online is different.
+    - Overfitting :  When the model has low training and validation error but performs poorly on live data overfitting might have occured.
+        - Test data : Using hold out set called test data to evalute the final model performance.
+        - Test data size : Creating the test data large enough to cover all pattern expected in the live traffic.
+    - Underfitting : When the model is simple and it could not learn the complex patterns  in the data.
+- Iterative model development
+
+  How to get ideas for iterative development
+   - Model debugging and testing guide on future iterations
+   - Improve model by constantly looking at model failure cases
+   - Keep checking for overfitting and underfitting
+  What could be improvements
+   - Missing important feature : Model performance can improve if we can add a feature that captures more information like the 'actor' feature in case of movie recommendation
+   - Insufficient training examples : For certain subcategories and scenarios, we might have has very less training data.
+- Debugging large scale systems
+    - 
+
+     
