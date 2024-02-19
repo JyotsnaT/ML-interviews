@@ -162,3 +162,19 @@ ML model's success can be measured through different ways, depending on the unde
 - Long running A/B tests : In a short running experiment we might see gains but in long term that change might cause loss in some other areas. For e.g. if we show more ads to users in ad recommendation platform, in short term there might be increase in revenue. But in long term users might start leaving the platform since too many ads are being show. A long running A/B test can be performed. A long running backtest can be used as well.
 
   <img src="online-test.png" width=500>
+
+# Embeddings
+Using embeddings we can encode an entity into a N-dimensional vector, while capturing the semantics. 
+
+- Text embeddings
+    - Word2vec : Dense word embedding learnt by providing a contextual window of N nearby words in the sequence to a neaural network. The hidden layer output for each work corresponds to the word embeddings. The words are represented a BOW in this neural network
+        - CBOW : Predict the current word, given the n/2 preceding words and n/2 succeding words as input.
+        - n-grams : Predict the n/2 preciding words and n/2 succeding words given current word as input.
+    - Context based embeddings : Words have different meanign based on context. Hence, we can generate different embedding for the same words when the context is different.
+        - ELMo : Embeddings from language models - Uses LSTM
+        - BERT : Biderectional Encoder representation from Transformers - Uses attention to capture long term context
+- Visual Embeddings
+    - Autoencoder embeddings : The encoder output from the auto encoder is a compresssed representation of the image and can be treated as appropriate embeddings.
+    - Supervised model embeddings : Since supervised CNNs are trained for specific tasks, their penultimate layer outputs can be used as embeddings.
+- Learning embeddings for a particular task during training time. For e.g train embeddings for movies and queries suring training time.
+- Network relationship based embeddings : Jointly train embeddings for user and items for example in the same space. For ranking and recommendation, the embeddings of user and item will be closed to each other when a user likes that item. The two tower model is used for this and the loss function is difference in cosine distance of similar pair vs un similar pairs.  
