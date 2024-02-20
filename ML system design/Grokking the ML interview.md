@@ -235,6 +235,7 @@ Applications
    - Missing important feature : Model performance can improve if we can add a feature that captures more information like the 'actor' feature in case of movie recommendation
    - Insufficient training examples : For certain subcategories and scenarios, we might have has very less training data.
 - Debugging large scale systems
-    - 
+  - Identify the failing component : There will be multiple components to the system. E.g. a selector and a ranker in case of a search enginer. Using multi examples or single example identify the components where the error might be occuring.
+  - Improve the quality of component
 
      
