@@ -10,7 +10,7 @@
 
 
 # Travel
-- [ ] [Prioritizing Home Attributes Based on Guest Interest | AirBnB](https://medium.com/airbnb-engineering/prioritizing-home-attributes-based-on-guest-interest-3c49b827e51a)
+- [x] [Prioritizing Home Attributes Based on Guest Interest | AirBnB](https://medium.com/airbnb-engineering/prioritizing-home-attributes-based-on-guest-interest-3c49b827e51a)
 
       Personalize recommendation to hosts based on guest interests in unstructured data
       Attribute prioritization system -
@@ -29,6 +29,40 @@
           - Given characteristic of home such as property type, location, capacity, luxury level, predict the frequency of each attribute occuring in messages, reviews and requests.
           - Calculate customised importance score for each possible attribute, based on the above freqiencies.\
           - If the attribute is important and it exists or needs clarification, host can be sent recommendations.
+- [ ] [Expedia Group’s Customer Lifetime Value Prediction Model](https://medium.com/expedia-group-tech/expedia-groups-customer-lifetime-value-prediction-model-7927cdd44342)
+
+      Customer lifetime value: Refers to future cash flow capabilities of a customer over long term periods.
+      Problem statememt: Identify high lifetime value customers to plan aquisition and retention of customers.
+      Exisiting non-ML techniques for CLV predictions -
+            - Cohort analysis : Can be calculated only for predefined segmemts.
+            - RFM (Recency, Frequency, Monetary) : Only past transactions are considered, but non-monetary like engagement and customer satisfaction are not considered.
+            - Statistical buy-till-you-die : Can not be accurately used for new customers since multiple transactions for 1 user are needed.
+      Solution
+            Build a supervised learning model using gradient boosted trees that uses multiple input features capturing user past transactions and engagements.
+      Data: Collected across companies and for different verticals like flights, stays, packages, cabs, etc and divided into -
+            Booking
+                  - detailed insights of recent purchases like brand, platform, value, region, etc.
+                  - aggregated features for past transactions across levels like 3 months, 6 months, 12 months. Features being - total bookings, avg. gap between bookings, total booking value, avg booking window, proportions between different brands 
+            Engagement: Customer interactions with the platforms other than just booking. Engagement with loyalty programs, marketing campaings, etc.
+            Cut-off date : Engagements and purchases before cut-off date can be used to compute input features and data after that is used for predicting lifetime value.
+      Modelling :
+            CLV model - a collection of 30 different catboost models trained for differnt regions, recency, frequencies. Each segment has different features, that way unique needs of each of the region and groups are handled.
+            CLV multipliers - Scale the gross CLV predictions from the model to net CLV to account for cancellations.
+            Model Evaluation -
+                  - Lorenz curve and gini coefficient : Model's differentiability of high CLV customers with rest
+                  - RSME and bias : How far are the predicted values from actuals
+                  - calibration plots : If the predictions are in the same scale as the actual values.
+            Challenges : Feature computation optimization. Erratic behaviour during covid.
+      MLOps : EG's unified platform to train, deploy, maintain features, maintain models versioning, monitor health
+            - Model development is done in databricks notebooks.
+            - GitHub is used for code maintainance and version controlling. Changes pushed to prod only after integration tests are finished.
+            - Data source is s3 and acessed using Hive. Data pipelines are writtin in spark on kubernetes.
+            - EG compute platform : Kubernetes based container on which models are trained and scored. Individual step is containarized. The platform supports ops like logging, metrics, scheduling, security, tracing.
+            - Model repository service : To manage models and their versions
+            - Airflow for workflow orchestration : Useful for batch inferencing using multiple models.
+            - Machine learning workflows are deployed through pre configuerd CI/CD pipelines. CI/CD workflow implemented using Github actions, spinnaker and artifactory.
+            - DataDog for infra monitoring. Alert mechanisms for training and scoring jobs, cluster health, job status, workload, logs investigation(splunk).
+       
 - [ ] 
 # Other resources
 - [Chip Huyen's book](https://github.com/chiphuyen/machine-learning-systems-design/blob/master/content/case-studies.md)
