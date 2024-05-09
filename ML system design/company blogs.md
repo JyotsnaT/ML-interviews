@@ -9,6 +9,7 @@
 # Feed Ranking
 
 
+
 # Travel
 - [x] [Prioritizing Home Attributes Based on Guest Interest | AirBnB](https://medium.com/airbnb-engineering/prioritizing-home-attributes-based-on-guest-interest-3c49b827e51a)
 
@@ -29,7 +30,7 @@
           - Given characteristic of home such as property type, location, capacity, luxury level, predict the frequency of each attribute occuring in messages, reviews and requests.
           - Calculate customised importance score for each possible attribute, based on the above freqiencies.\
           - If the attribute is important and it exists or needs clarification, host can be sent recommendations.
-- [ ] [Expedia Group’s Customer Lifetime Value Prediction Model](https://medium.com/expedia-group-tech/expedia-groups-customer-lifetime-value-prediction-model-7927cdd44342)
+- [x] [Expedia Group’s Customer Lifetime Value Prediction Model](https://medium.com/expedia-group-tech/expedia-groups-customer-lifetime-value-prediction-model-7927cdd44342)
 
       Customer lifetime value: Refers to future cash flow capabilities of a customer over long term periods.
       Problem statememt: Identify high lifetime value customers to plan aquisition and retention of customers.
@@ -63,6 +64,18 @@
             - Machine learning workflows are deployed through pre configuerd CI/CD pipelines. CI/CD workflow implemented using Github actions, spinnaker and artifactory.
             - DataDog for infra monitoring. Alert mechanisms for training and scoring jobs, cluster health, job status, workload, logs investigation(splunk).
        
+- [x] [Categorising Customer Feedback Using Unsupervised Learning](https://medium.com/expedia-group-tech/categorising-customer-feedback-using-unsupervised-learning-8608c1e62d48)
+      Problem : Group customer feedback messages into categories to be routed to right teams.
+      Solution : Multilabel classification using unsupervised learning
+
+      Initial efforts
+            Multilabel classification using supervised learning: Would require a lot of pretrained data.
+            Multilabel classification using word synonym : Hard to capture the same context by mere context. Flight and plane are synonymous but flew is not.
+      Current solution : Leverage pretrained word embedding models to understand context since it can better model the distance between the target words and keywords from the feedback messages. Word embeddings canplace words of the same context together like flight, flew, pilot, etc.
+            Word2vec - shallow neural network is trained on word - word co-occurance
+            GloVe Embeddings - pretrained GloVe embeddings
+      Preprocess the text into keywords. Then retreive categories for keywords based on threshold on similarity with each category. This threshold is tuneable to each category.
+            
 - [ ] 
 # Other resources
 - [Chip Huyen's book](https://github.com/chiphuyen/machine-learning-systems-design/blob/master/content/case-studies.md)
