@@ -65,9 +65,9 @@
             - DataDog for infra monitoring. Alert mechanisms for training and scoring jobs, cluster health, job status, workload, logs investigation(splunk).
        
 - [x] [Categorising Customer Feedback Using Unsupervised Learning](https://medium.com/expedia-group-tech/categorising-customer-feedback-using-unsupervised-learning-8608c1e62d48)
+
       Problem : Group customer feedback messages into categories to be routed to right teams.
       Solution : Multilabel classification using unsupervised learning
-
       Initial efforts
             Multilabel classification using supervised learning: Would require a lot of pretrained data.
             Multilabel classification using word synonym : Hard to capture the same context by mere context. Flight and plane are synonymous but flew is not.
