@@ -6,7 +6,7 @@ know what they are looking for hence some items are supposed to be recommended t
 space has become abundantly large and can accomodate exponentially large number of items.
 - Long tail phennomenon
 
-  <img src="ML system design/long tail.png" width="300">
+  <img src='img/long tail.png' width="300">
 Less popular articles are not stored in the offline stores. After a threshold, the popualrity of the items decreases drastically.
 - Types of recommendation
   - Editorial and hadn curated : Done by the staff
@@ -64,6 +64,15 @@ Approaches to build recommender systems
       
  2. Collaborative Filtering 
 
+# Evaluation metrics
+- NDCG :
+    - CG : Cumulative Gain
+      $$CG_p = \sum_{i=1}^{p} rel_i$$
+    - DCG : Discounted Cumulated gain
+      $$DCG_p = \sum_{i=1}^{p} \frac{rel_i}{log_2(i+1)}$$
+    - NDCG : Normalized Discounter Cumulated Gain. Nirmalize DCG in the range of 0 to 1 for varu=ying length queries.
+      $$NDCG_p = \frac{DCG_p}{IDCG_p}$$
+      $$IDCG_p = DCG of ideal ordering of query results by human labellers.$$
 
 
 # Comment Recommender to maximize engagement on video
