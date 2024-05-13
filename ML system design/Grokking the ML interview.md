@@ -5,7 +5,7 @@ ML is used at several areas like speech understanding, visual understansing, sea
 
 ## ML interview expectation
 
-  <img src="/ML system design/MLsystemdesign.png" width = 700>
+  <img src="img/MLsystemdesign.png" width = 700>
 
 ## Setting up ML system
 - Setting up problem
@@ -36,7 +36,7 @@ Probe: How is the feed currently displayed and how can can it be improved?
   
 - Architecture design
 
-  <img src="/ML system design/serach_architecture.png" width=500/>
+  <img src="/ML system design/img/serach_architecture.png" width=500/>
 
 - Scale consideration
   Funnel method can be used to reduce the number of items at every stage, and a complex model can be safely used in final stages.
@@ -123,7 +123,7 @@ Probe: How is the feed currently displayed and how can can it be improved?
     - Training data : Useful to learn the parameters of the model
     - Validation data : Useful to tune the hyperparameters. And to know whether the model performs good because it overfits the training data or it can actually generalize very well. After a certain numnber of iterations when the validation error starts increasing is when the model starts overfitting the train data.
 
-      <img src="val-error.png" width=500>
+      <img src="img/val-error.png" width=500>
     - Test data : Hold out set that the model has not seen at all. It will test the true generalizing capabilities of the model. It is also used for model selection if multiple models have been trained. The outcome of this test will determine if the model will be sent for A/B testing.
 - Splits strategies
     - Ratio : 60:20:20 or 70:15:15
@@ -132,7 +132,7 @@ Probe: How is the feed currently displayed and how can can it be improved?
 - No. of training examples
     - Plot the performance of the model against the number of examples. After a certain number of examples the performance of the model would not change. That is the optimal number of training examples required to train the model.
       
-<img src="train-examples.png" width=500>
+<img src="img/train-examples.png" width=500>
 
 - Training data filtering
     - Data cleaning : Handling missing data, duplicates, outliers, drop irrelevant features. Remove unuseful patterns identified in the training data.
@@ -161,7 +161,7 @@ ML model's success can be measured through different ways, depending on the unde
 - Back testing : Conduct a B/A test and ensure that if there was a gain of x% in A/B test, there is x% loss in B/A test.
 - Long running A/B tests : In a short running experiment we might see gains but in long term that change might cause loss in some other areas. For e.g. if we show more ads to users in ad recommendation platform, in short term there might be increase in revenue. But in long term users might start leaving the platform since too many ads are being show. A long running A/B test can be performed. A long running backtest can be used as well.
 
-  <img src="online-test.png" width=500>
+  <img src="img/online-test.png" width=500>
 
 # Embeddings
 Using embeddings we can encode an entity into a N-dimensional vector, while capturing the semantics. 
