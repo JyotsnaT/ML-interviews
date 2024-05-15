@@ -76,7 +76,42 @@
             GloVe Embeddings - pretrained GloVe embeddings
       Preprocess the text into keywords. Then retreive categories for keywords based on threshold on similarity with each category. This threshold is tuneable to each category.
             
+- [ ] [Personalization in Practice](https://booking.ai/personalization-in-practice-2bb4bc680eb3)
+
+      Personalization and recommendation are late adopters of novel solutions because of problem hardness. Trends explored - deep learning, causality, active exploration with bandits. Topics covered - explainabiity, fairness, content generation, natural interfaces.
+
+      Deep Learning :
+            Sequence in recommender systems:
+            Image classification:
+            Multi task learning
+      Causality:
+            Feedback loops : Actions results in effects. Use feedback loop to retrain models.
+            uplift modelling :
+            A/B testing :
+      Active Exploration
+            Contextual bandits
+            REinforcement learning
+            Human in the loop
+      fairness and explainability
+            Factorization methods for explainability
+      Content Generation
+
+      Multi task learning
+            Bundling
+
+      Sequence modelling : Multidestination trip, DEstination recommendation. Next destination prediction
+            RNN to predict next destination, given a starting destination.
+            GRU. LSTM to solve vanishing gradient problems.
+            Context features in
+                  seq level features : Does not change over time
+                  token level features :
+                  Important feature - days to next
+      
+- [ ] [Using Synthetic Search Data for Flights Price Forecasting](https://medium.com/expedia-group-tech/using-synthetic-search-data-for-flights-price-forecasting-4cf3277afdaf)
+
+      
 - [ ] 
+
 # Other resources
 - [Chip Huyen's book](https://github.com/chiphuyen/machine-learning-systems-design/blob/master/content/case-studies.md)
 - [Evidently Ai](https://www.evidentlyai.com/ml-system-design)
