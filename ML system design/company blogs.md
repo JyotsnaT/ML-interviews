@@ -1,15 +1,24 @@
 # ML Case studies from industry
 
+1. [AB test](#ab_test)
+2. [Feed Ranking](#feed_ranking)
+3. [Travel](#travel)
+4. [E-commerce](#e_comm)
+
+
+<a name="ab_test"></a>
 # AB test
 - [ ] [Measurement and analysis of ranking at Instagram](https://www.facebook.com/watch/?v=1856120757994353)
 - [ ] [The pitfalls of A/B testing in social networks](https://tech.okcupid.com/the-pitfalls-of-a-b-testing-in-social-networks-17d631d7b20d)
 - [ ] [How Meta tests products with strong network effects](https://medium.com/@AnalyticsAtMeta/how-meta-tests-products-with-strong-network-effects-96003a056c2c)
 - [ ] [From Infrastructure to Culture: A/B Testing Challenges in Large Scale Social Networks ](dl.acm.org/doi/10.1145/2783258.2788602)
 - [ ] [Sequential A/B Testing Keeps the World Streaming Netflix Part 1: Continuous Data](https://netflixtechblog.com/sequential-a-b-testing-keeps-the-world-streaming-netflix-part-1-continuous-data-cba6c7ed49df)
+
+<a name="feed_ranking"></a>
 # Feed Ranking
 
 
-
+<a name="travel"></a>
 # Travel
 - [x] [Prioritizing Home Attributes Based on Guest Interest | AirBnB](https://medium.com/airbnb-engineering/prioritizing-home-attributes-based-on-guest-interest-3c49b827e51a)
 
@@ -108,6 +117,9 @@
                   Important feature - days to next
       
 - [ ] [Using Synthetic Search Data for Flights Price Forecasting](https://medium.com/expedia-group-tech/using-synthetic-search-data-for-flights-price-forecasting-4cf3277afdaf)
+
+<a name="e_comm"></a>
+# E-commerce
 - [ ] [Evolving Recommendations: A Personalized User-Based Ranking Model](https://innovation.ebayinc.com/tech/engineering/evolving-recommendations-a-personalized-user-based-ranking-model/)
 
       - A deep learning based ranker for candidate recommendations for personalized recommendations.
@@ -117,7 +129,32 @@
       - Model structure : A deep and wide architecture for the user based ranker.
             - Deep model like RNN to model user's sequential behaviour
             - Bottom layers sharing to perform multi-task learning
-            - leverage user and recommended item embeddings from other pre-trained embedding models  
+            - leverage user and recommended item embeddings from other pre-trained embedding models
+            Deep Structure: Provides generalization capability
+                  - Fully connected neural network taking input from transformed features.
+                  - Concatenation of
+                  - Numerial features : Relationship of candidate item with user's past history
+                  - Embedding features : Projection of categorical features.
+            Wide Structure: Provides memorization capability
+                  - shallow network that will correct the weakening of user features casused by deep network.
+                  - memorization is helpful for id related features like user_id, item_id, but might not be helpful when user and item patters vary a lot.
+      - Feature engineering
+            - User features determine upper bound on model performance
+            - Pre-trained embedding features
+                  - User and item features from a tewo-tower based personalized recall model which has learnt implicit represenation based on user's behaviour history and item information.
+                  - feed the features directly to model since they are dense features
+            - Derived features
+                  - Effective features with more business explainability.
+                  - Freshness features to measure user's decay of interest.
+                  - User's intrinsic preferences and browsing behaviors captured via add-to-cart and transaction features.
+      - Loss function
+            - Pair-wise loss function to optimize for click and purchase probability at the same time.
+            - In the case of ranking, the objective it to minimize incorrect ordering of recommended items, in comparision to relevence score or classification.
+            - Pair-wise loss function comes up with optimal ordering of 2 items where preference of 1 item is learnt given another item.
+            - $L_{loss} = log(1 + e^{-pairwiseTargetLoss*pairwiseModelScore})$
+      - Offline Evaluation
+            - NDCG : Normalized discounted cumulative gain
+      
 - [ ] 
 
       
