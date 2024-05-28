@@ -108,6 +108,17 @@
                   Important feature - days to next
       
 - [ ] [Using Synthetic Search Data for Flights Price Forecasting](https://medium.com/expedia-group-tech/using-synthetic-search-data-for-flights-price-forecasting-4cf3277afdaf)
+- [ ] [Evolving Recommendations: A Personalized User-Based Ranking Model](https://innovation.ebayinc.com/tech/engineering/evolving-recommendations-a-personalized-user-based-ranking-model/)
+
+      - A deep learning based ranker for candidate recommendations for personalized recommendations.
+      - In the past, item based contextual recommendations were popular but sometimes only user context is present like homepage, feed, personalized recommedation module based on user's shopping behaviour.
+      - Personalized recommendation for user has 2 steps - candidate generation and ranker based on a business objective like CTR, purchase through rate.
+      - A deep learning ranker on user's historical behaviour is used to predict user's click and purchase actions.
+      - Model structure : A deep and wide architecture for the user based ranker.
+            - Deep model like RNN to model user's sequential behaviour
+            - Bottom layers sharing to perform multi-task learning
+            - leverage user and recommended item embeddings from other pre-trained embedding models  
+- [ ] 
 
       
 - [ ] 
