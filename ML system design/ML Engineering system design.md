@@ -21,15 +21,20 @@ Data collection and labelling
 Model training
   - Model training
     - Data vs Model parallelism
+    - Saving trained model on model store or registery
+    - Feature fetcher
   -  CI/CD : Continuous integration, Continuous delivery and deployment
     - CI : Merge code changes faster assisted with automated checks
     - CD(Delivery) : Enable changes to the production automatically after the changes have been passed through a single click for freqeunt releases.
     - CD(Deployment) : Deploy changes to production automatically after a code change has been passed.
     - example : CircleCI, Github actions
- esting
+ Testing
   - Unit tests, Integration test, End-to-end tests, production testing (shadow mode testing, canary deployment, AB testing)
   - A/B test
-Deployment 
+Deployment
+  - Inference service : REST api
+  - Model serving frameword
+Monitoring
    
 
 Model training
